@@ -1,0 +1,169 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 0 0% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+
+    --primary: 211 100% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 138 60% 41%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 211 100% 36%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 92%;
+    --input: 0 0% 90%;
+    --ring: 211 100% 36%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 13%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 13%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 211 100% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 138 60% 41%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 211 100% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-hover hover:-translate-y-1;
+  }
+  
+  .button-primary {
+    @apply bg-findBlue text-white px-6 py-3 rounded-md font-medium transition-all 
+           duration-300 hover:bg-findBlue/90 active:bg-findBlue/80 focus:outline-none 
+           focus:ring-2 focus:ring-findBlue/50 shadow-md hover:shadow-lg;
+  }
+  
+  .button-secondary {
+    @apply bg-signalGreen text-white px-6 py-3 rounded-md font-medium transition-all 
+           duration-300 hover:bg-signalGreen/90 active:bg-signalGreen/80 focus:outline-none 
+           focus:ring-2 focus:ring-signalGreen/50 shadow-md hover:shadow-lg;
+  }
+  
+  .button-outline {
+    @apply border-2 border-findBlue text-findBlue px-6 py-[10px] rounded-md font-medium 
+           transition-all duration-300 hover:bg-findBlue/10 active:bg-findBlue/20 
+           focus:outline-none focus:ring-2 focus:ring-findBlue/50;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none 
+           focus:ring-2 focus:ring-findBlue/50 focus:border-transparent transition-all 
+           duration-200 bg-white;
+  }
+  
+  .navbar-item {
+    @apply relative px-3 py-2 transition-all duration-300 hover:text-findBlue before:absolute 
+           before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-findBlue 
+           before:transition-all before:duration-300 hover:before:w-full;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 8px rgba(0, 87, 184, 0.3);
+  }
+  
+  .animate-stagger-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-stagger-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-stagger-3 {
+    animation-delay: 0.3s;
+  }
+}
